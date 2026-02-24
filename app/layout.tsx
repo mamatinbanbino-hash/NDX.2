@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
@@ -8,8 +9,8 @@ import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chat.vercel.ai"),
-  title: "Next.js Chatbot Template",
-  description: "Next.js chatbot template using the AI SDK.",
+  title: "NDX.A - Intelligence Universelle",
+  description: "Expertise Universelle by Ndiaye Adama",
 };
 
 export const viewport = {
@@ -56,22 +57,35 @@ export default function RootLayout({
   return (
     <html
       className={`${geist.variable} ${geistMono.variable}`}
-      // `next-themes` injects an extra classname to the body element to avoid
-      // visual flicker before hydration. Hence the `suppressHydrationWarning`
-      // prop is necessary to avoid the React hydration mismatch warning.
-      // https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
-      lang="en"
+      lang="fr"
       suppressHydrationWarning
     >
       <head>
         <script
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: "Required"
           dangerouslySetInnerHTML={{
             __html: THEME_COLOR_SCRIPT,
           }}
         />
       </head>
       <body className="antialiased">
+        {/* SIGNATURE NDIAYE ADAMA */}
+        <div style={{
+          position: 'fixed',
+          top: '10px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          fontFamily: 'serif',
+          fontSize: '0.7rem',
+          color: '#00a8ff',
+          letterSpacing: '3px',
+          zIndex: 9999,
+          pointerEvents: 'none',
+          fontWeight: 'bold',
+          textTransform: 'uppercase'
+        }}>
+          BY NDIAYE ADAMA
+        </div>
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
